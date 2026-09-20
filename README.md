@@ -1,13 +1,9 @@
-Aquí tienes un archivo `README.md` completo, profesional y adaptado a la estructura de tu proyecto y los modelos de Parmessano:
-
-```markdown
 # Parmessano — Optimizador y Proyector de Personal por Estación
 
 Sistema inteligente de pronóstico de demanda transaccional y dimensionamiento operativo de personal por estación de trabajo (cocina, barra, salón) para sucursales de **Parmessano** (*Atlantis*, *Santafe*, *Atrio*). El sistema ejecuta modelos de Machine Learning ensamblados (`ExtraTrees`) entrenados con historial de ventas y traduce las transacciones pico proyectadas en requerimientos de colaboradores (*pax*) basándose en matrices de productividad por nivel operativo.
 
----
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 APP/
@@ -28,14 +24,22 @@ APP/
 
 ---
 
-## ⚙️ Requisitos Previos
+## Requisitos Previos
 
 * **Python**: `3.10` o superior recomendado.
-* **Git** y **Git LFS** (recomendado para gestionar los archivos `.joblib` de gran tamaño).
+* **Git** 
+* **streamlit**
+* **pandas**
+* **openpyxl**
+* **joblib**
+* **numpy**
+* **scikit-learn**
+* **matplotlib** 
+
 
 ---
 
-## 🚀 Instrucciones de Instalación
+## Instrucciones de Instalación
 
 1. **Clonar el repositorio y ubicarse en la raíz de la app**:
 ```bash
@@ -75,7 +79,7 @@ pip install -r requirements.txt
 
 ---
 
-## 💡 Instrucciones Básicas de Uso
+## Instrucciones Básicas de Uso
 
 1. **Ejecutar la interfaz web (Streamlit)**:
 ```bash
@@ -98,24 +102,20 @@ python -m streamlit run scr/app.py
 
 ---
 
-## 🔗 Enlaces y Recursos Relevantes
+## Enlaces y Recursos Relevantes
 
-* **Tablero en Vivo (Cloud)**: [Enlace a despliegue en Streamlit Cloud / AWS](https://www.google.com/search?q=https://share.streamlit.io/tu-usuario/parmessano-app&utm_source=gemini) *(pendiente de deploy)*.
+* **Tablero en Vivo (Cloud)**: [Enlace a despliegue en Streamlit](https://proyectofinal-v1.streamlit.app/) *(POC previo a entrega final)*.
 * **Notebooks de Entrenamiento y Descubrimiento**:
 * [suspicious link removed] (Pipeline de preprocesamiento, validación temporal y entrenamiento ExtraTrees).
 
 
-* **Fuentes de Negocio**: Matriz de redimensionamiento validada bajo la Ley Emiliani y benchmarks de turnos corporativos.
+* **Fuentes de Negocio**: 
 
 ---
 
-## 🛠️ Stack Tecnológico
+️ Stack Tecnológico
 
-* **Core / UI**: [Streamlit](https://streamlit.io/?utm_source=gemini)
-* **ML / Ensamble**: [Scikit-learn](https://scikit-learn.org/?utm_source=gemini) (`ExtraTreesRegressor`, `Pipeline`, `ColumnTransformer`)
-* **Procesamiento de Datos**: [Pandas](https://pandas.pydata.org/?utm_source=gemini), [NumPy](https://numpy.org/?utm_source=gemini)
-* **Visualización**: [Matplotlib](https://matplotlib.org/?utm_source=gemini)
-
-```
-
-```
+* **Core / UI**: [Streamlit](https://streamlit.io)
+* **ML / Ensamble**: [Scikit-learn](https://scikit-learn.org) (`ExtraTreesRegressor`, `Pipeline`, `ColumnTransformer`)
+* **Procesamiento de Datos**: [Pandas](https://pandas.pydata.org), [NumPy](https://numpy.org)
+* **Visualización**: [Matplotlib](https://matplotlib.org)
