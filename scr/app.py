@@ -38,6 +38,9 @@ PALETA_ESTACIONES = [
     '#8b5cf6',
 ]
 
+# Mapeo de sucursales ID -> Nombre amigable
+MAPA_SUCURSALES = {116: 'Atlantis', 117: 'Santafe', 122: 'Atrio'}
+
 
 def extraer_predictor(obj):
   """Busca recursivamente o en atributos/llaves un objeto con método .predict()."""
@@ -221,8 +224,11 @@ st.markdown(
 
 col1, col2, col3 = st.columns(3)
 with col1:
-  suc = st.selectbox(
-      'Sucursal', [116, 117, 122], format_func=lambda x: f'Sucursal {x}'
+  # Selector con nombres descriptivos de sucursal
+  suc_id = st.selectbox(
+      'Sucursal',
+      options=list(MAPA_SUCURSALES.keys()),
+      format_func=lambda x: MAPA_SUCURSALES[x],
   )
 with col2:
   fecha = st.date_input('Fecha de Proyección', value=date(2026, 9, 21))
@@ -233,16 +239,16 @@ with col3:
       index=1,
   )
 
-model = load_model(suc)
+model = load_model(suc_id)
 if model is None or not hasattr(model, 'predict'):
   st.warning(
       f'⚠️ No se encontró un estimador ejecutable con .predict() para la'
-      f' sucursal {suc}.'
+      f' sucursal {MAPA_SUCURSALES[suc_id]}.'
   )
 else:
   st.success(
-      f'✅ Modelo `ExtraTrees` de sucursal {suc} activo y ejecutando inferencia'
-      ' real.'
+      f'✅ Modelo `ExtraTrees` de sucursal {MAPA_SUCURSALES[suc_id]} activo y'
+      ' ejecutando inferencia real.'
   )
 
 horas_op = list(range(8, 22))
